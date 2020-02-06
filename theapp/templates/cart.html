@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="page">
+  <section class="shopping-cart dark">
+    <div class="container">
+          <div class="block-heading">
+            <h2>Shopping Cart</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+          </div>
+          <div class="content">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="items">
+              {% for i in items %}
+              <div id="prod_" class="product">
+                <div class="row">
+                  <div class="col-md-3">
+                    <img class="img-fluid mx-auto d-block image" src="{{ url_for('static', filename='images/' + i.img) }}">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="info">
+                      <div class="row">
+                        <div class="col-md-4 product-name">
+                          <div class="product-name">
+                            <a  href="#">{{i.name}}</a>
+                            <div class="product-info">
+                              <div>Display: <span class="value">5 inch</span></div>
+                              <div>RAM: <span class="value">4GB</span></div>
+                              <div>Memory: <span class="value">32GB</span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-5 price">
+                          <p>Količina : {{i.q}}</p>
+                          <span class='cijena'> Cijena : {{i.price}} KM</span>
+
+
+                    </div>
+                  <div class="col-md-3 remove">
+                        <button id="{{i.id}}" class="prim">Obriši Artikal</button>
+                      </div>
+                        <div class="col-md-3 remove">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <div class="summary">
+              <h3>Summary</h3>
+              <div class="summary-item"><span class="text">Subtotal</span><span id='result' class="price">{{ items | sum(attribute='price') }}</span></div>
+              <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
+              <div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
+              <div class="summary-item"><span class="text">Total</span><span class="price" id='total'></span></div>
+
+              <a href="{{url_for('controla.check_out')}}" class="btn shop-btn mb-15 ma">Naruči</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+$(document).ready(function() {
+    $('.prim').each(function() {
+        var toggle_div_id = 'prod_' + $(this).attr('id');
+        $('#prod_').attr('id', toggle_div_id);
+        $(this).click(function() {
+            var getVal = $(this).attr('id');
+            $("#" + toggle_div_id).remove();
+            var sum = 0
+            sum += parseFloat($('.cijena').text());
+            console.log(sum);
+            $("#result").html(sum);
+            $("#total").html(sum);
+            $.ajax({
+                url: "/cart",
+                type: "get",
+                data: {
+                    layout: getVal
+                },
+                success: function(response) {
+                    console.log(getVal);
+                },
+            });
+        });
+    });
+});
+
+
+</script>
+
+  {% endblock %}
