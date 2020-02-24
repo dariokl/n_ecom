@@ -1,8 +1,8 @@
-from theapp import db
+from app import db
 from flask import render_template,  request, redirect, url_for, Blueprint, flash
 from flask_login import login_user, login_required, logout_user, current_user
-from theapp.users.forms import RegistrationForm, LoginForm
-from theapp.models import User
+from app.users.forms import RegistrationForm, LoginForm
+from app.models import User
 
 users = Blueprint('users', __name__)
 

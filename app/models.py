@@ -1,7 +1,7 @@
-from theapp import db
+from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, AnonymousUserMixin
-from theapp import login_manager
+from app import login_manager
 from datetime import datetime
 
 
@@ -21,7 +21,7 @@ class User(db.Model , UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, index=True)
     email = db.Column(db.String(128), unique=True, index=True)
-    password_hash = db.Column(db.String(64))
+    password_hash = db.Column(db.String)
     is_admin = db.Column(db.Boolean, default=True)
 
 
@@ -95,7 +95,7 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     user_mail = db.Column(db.String)
-    text = db.Column(db.Text(750))
+    text = db.Column(db.Text)
     number = db.Column(db.String, nullable=False)
     product = db.Column(db.String)
     ammount = db.Column(db.Integer, nullable=False)
@@ -115,3 +115,4 @@ class Order(db.Model):
     def __repr__(self):
 
         return f"{self.product}"
+

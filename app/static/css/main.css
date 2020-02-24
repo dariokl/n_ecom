@@ -1,14 +1,11 @@
-/*!
- * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
- */
+
 body{
-  padding-top: 55px;
 
 
 
 }
+
+/* NAV BAR ORGANIZATION */
 .navbar{
   background-image: linear-gradient(to right, #d9dde6, #e8bc8d);
   padding: 0 !important;
@@ -35,7 +32,7 @@ body{
   outline: none !important;
 }
 
-
+/* LANDING CAROUSEL */
 .cont {
   height: 100vh;
   min-height: 350px;
@@ -59,16 +56,14 @@ body{
   color: #efeeea;
   text-shadow: black 0px 0px 3px;
 }
-
+/* SECTIONS AFTER HEADER */
 .description{
-
   color: #eee;
   font-size: 20px;
   font-weight: 300;
-
 }
 
-
+/* PRODUCTS SECTION CSS */
 .card-title{
   margin-top: -7rem;
   color:  #e8bc8d;
@@ -97,12 +92,14 @@ body{
 .wrapper .container .top {
   height: 80%;
   width: 100%;
-  background: url('banner2.jpg') no-repeat center center;
+  background:url("/static/images/banner2.jpg")no-repeat center center;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   -o-background-size: 100%;
   background-size: 100%;
 }
+
+
 .wrapper .container .bottom {
   width: 200%;
   height: 20%;
@@ -353,12 +350,17 @@ button:hover, a:hover {
 
 
 .payment-form{
+
 	padding-bottom: 50px;
-	font-family: 'Montserrat', sans-serif;
+
 }
 
 .payment-form.dark{
 	background-color: #f6f6f6;
+	padding-top:50px;
+	padding-bottom: 50px;
+	font-family: 'Montserrat', sans-serif;
+
 }
 
 .payment-form .content{
@@ -505,6 +507,7 @@ button:hover, a:hover {
 
 .shopping-cart.dark{
 	background-color: #f6f6f6;
+	height:100vh;
 }
 
 .shopping-cart .content{
@@ -672,11 +675,11 @@ button:hover, a:hover {
 	 left: 0;
 }
  .app__bgimg-image--1 {
-	 background: url('banner5.jpg') center center no-repeat;
+	 background: url('/static/images/banner5.jpg') center center no-repeat;
 	 background-size: cover;
 }
  .app__bgimg-image--2 {
-	 background: url('banner2.jpg') center center no-repeat;
+	 background: url("/static/images/banner2.jpg") center center no-repeat;
 	 background-size: cover;
 	 opacity: 0;
 	 transition: opacity 0ms 1300ms;
@@ -1010,4 +1013,8 @@ button:hover, a:hover {
 
 .remove{
   margin-top: 2rem;
+}
+
+.page{
+height:100vh;
 }

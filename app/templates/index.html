@@ -1,4 +1,8 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% block head %}
+{{ super () }}
+<link href="{{url_for('static', filename='css/core-style.css')}}" rel="stylesheet">
+{% endblock %}
 {% block content %}
 <section id ='banner'>
   <header>
@@ -261,7 +265,7 @@
 </section>
 
 <section id='services'>
-  <div class="container">
+<div class="container">
     <div class="row">
       <div class="col-md-12">
         <h1 class="text-center carousel-title">What do we do ?</h1>
@@ -288,7 +292,6 @@
       </div>
     </div>
 </div>
-  </div>
     </section>
 
 <section id='workout'>
@@ -309,6 +312,8 @@
 </div>
 
 </div>
+      </div>
+  </div>
 </section>
 
 
@@ -328,8 +333,8 @@
   <div class="card2">
   <img src="https://scontent.fbeg4-1.fna.fbcdn.net/v/t1.0-9/s960x960/79016782_10218064720901800_6856120336862150656_o.jpg?_nc_cat=111&_nc_oc=AQmnEp4lyaMCkFofVH4xvWdwdruybJjTfYrET5Qtr836mggCjwYmeF3ZtoCu1cSgklI&_nc_ht=scontent.fbeg4-1.fna&_nc_tp=1002&oh=ee8251381d1a88b44c1d721ebcb6fa95&oe=5EDBB661" alt="Avatar" style="width:100%">
   <div class="container">
-    <h4><b>NEDIM BRAT</b></h4>
-    <p>OTac firme</p>
+    <h4><b>Nedim Avdicevic</b></h4>
+    <p>Direktor</p>
     <i class="fab fa-facebook"></i>
   </div>
 </div>
@@ -338,21 +343,22 @@
   <i class="fas fa-phone"></i>
   <p class='details'>
     <br>
-    Grad : Gradačartic <br>
-    Adresa : Ulica. Jebaca <br>
-    Radno vrijeme : od jutra do sutra <br>ha
+    Grad : Gradacac <br>
+    Adresa : Celikovaca <br>
+    Radno vrijeme :  07 : 16 h <br>
   </p>
 </div>
 <div class="col-md-4 about" data-aos="fade-left">
   <i class="fas fa-phone"></i>
   <p class='details'>
     <br>
-    Grad : Gradačartic <br>
-    Adresa : Ulica. Jebaca <br>
-    Radno vrijeme : od jutra do sutra <br>ha
+    Grad : Gradacac <br>
+    Adresa : Celikovaca <br>
+    Radno vrijeme :  07 : 16 h <br>
   </p>
 </div>
 </div>
+  </div>
 
 
 </section>

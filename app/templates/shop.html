@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block head %}
 {{ super () }}
-<link rel="stylesheet" href="static/core-style.css">
+<link rel="stylesheet" href="{{url_for('static', filename='css/core-style.css')}}">
 {% endblock %}
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid topic">
   <div class="row">
     <div class="col-sm-3 top">
 
@@ -36,7 +36,6 @@
 
 
   <button type="button" class="btn btn-primary submit-btn">NARUČI</button>
-
 
 
           </div>

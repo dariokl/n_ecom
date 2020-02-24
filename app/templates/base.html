@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% block head %}
   <!-- Custom styles for this template -->
-  <link href="static/main.css" rel="stylesheet">
+  <link href="{{url_for('static', filename='css/main.css')}}" rel="stylesheet">
   {% endblock %}
 
 
@@ -99,7 +99,7 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    <a href="http://www.personalstuff.herokuapp.com"> Dario Klopic</a>
   </div>
   <!-- Copyright -->
 

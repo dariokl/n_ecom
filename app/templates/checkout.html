@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
+{% block head %}
+{{ super () }}
+<link href="{{url_for('static', filename='css/core-style.css')}}" rel="stylesheet">
+{% endblock %}
 {% block content %}
 
-<main class="page payment-page">
     <section class="payment-form dark">
       <div class="container">
         <div class="block-heading">
@@ -18,9 +21,7 @@
               <p class="item-description">Lorem ipsum dolor sit amet</p>
             </div>
             {% endfor %}
-
             <div class="total">Total<span class="price">{{ items | sum(attribute='price') }}</span></div>
-
           </div>
 
           <div class="card-details">
@@ -39,18 +40,16 @@
                 <label for="comment">Upit</label>
                 {{form.text(class='form-control', id='comment', placeholder='Vise informacija o vasoj narudžbi',)}}
               </div>
-              <div class="form-group col-sm-4">
+              <div class="d-flex justify-content-center">
                 <label for="phone">Broj Tel.</label>
                 {{form.number(class='form-control', id='phone', placeholder='Broj telefona')}}
               </div>
-              <div class="form-group col-sm-12">
-                {{form.submit(class='btn btn-primary btn-block')}}
-
+              <div class="form-group col-sm-4">
+                {{form.submit(class='btn shop-btn mb-15 ma')}}
               </div>
             </div>
           </div>
         </form>
       </div>
     </section>
-  </main>
 {% endblock %}

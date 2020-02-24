@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField, SelectField
 from wtforms.validators import Email, EqualTo, DataRequired
 from wtforms import ValidationError
-from theapp.models import Order
+from app.models import Order
 
 
 class OrderForm(FlaskForm):
