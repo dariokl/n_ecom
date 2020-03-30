@@ -37,8 +37,6 @@
                         <div class="col-md-5 price">
                           <p>Količina : {{i.q}}</p>
                           <span class='cijena'> Cijena : {{i.price}} KM</span>
-
-
                     </div>
                   <div class="col-md-3 remove">
                         <button id="{{i.id}}" class="prim">Obriši Artikal</button>
@@ -60,7 +58,6 @@
               <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
               <div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
               <div class="summary-item"><span class="text">Total</span><span class="price" id='total'></span></div>
-
               <a href="{{url_for('controla.check_out')}}" class="btn shop-btn mb-15 ma">Naruči</a>
             </div>
           </div>
@@ -69,7 +66,6 @@
     </div>
   </section>
 </main>
-
 <script>
 $(document).ready(function() {
     $('.prim').each(function() {
@@ -96,8 +92,6 @@ $(document).ready(function() {
         });
     });
 });
-
-
 </script>
 
   {% endblock %}

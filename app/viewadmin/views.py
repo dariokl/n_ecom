@@ -13,6 +13,11 @@ from sqlalchemy import event
 admin_core = Blueprint('admin_core', __name__)
 
 # ADMIN VIEWS
+class MyAdminView(BaseView):
+    @expose('/')
+    def index(self):
+        return self.render('myadmin.html')
+
 class AdminView(ModelView):
     """ Defining an admin role for one single user ,
     this web app will be used by one person so i didnt see a point of making
@@ -91,7 +96,7 @@ class MultiImage(AdminView):
                 except OSError or TypeError:
                     pass
 
-
+admin.add_view(MyAdminView(name='View1', category='Test'))
 admin.add_view(AdminView(User, db.session))
 admin.add_view(AdminView(Order, db.session))
 admin.add_view(MultiImage(Article, db.session))
